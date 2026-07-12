@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <meta name="description" content="Super Pixel Mario — optimized 2D canvas platformer. Jump, stomp, collect coins." />
+  <title>Super Pixel Mario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23e52521' width='32' height='32' rx='4'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16'%3E🍄%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">🍄</span>
+        <div>
+          <h1>Super Pixel Mario</h1>
+          <p class="tagline">Optimized 2D canvas platformer</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span id="fps" class="fps" title="Frames per second">-- FPS</span>
+        <button type="button" id="btn-mute" class="icon-btn" aria-label="Toggle sound" aria-pressed="false" title="Mute (M)">🔊</button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <div class="hud" aria-live="polite">
+        <div class="hud-block">
+          <span class="hud-label">Score</span>
+          <span id="hud-score" class="hud-value">000000</span>
+        </div>
+        <div class="hud-block">
+          <span class="hud-label">Coins</span>
+          <span id="hud-coins" class="hud-value">×00</span>
+        </div>
+        <div class="hud-block">
+          <span class="hud-label">World</span>
+          <span id="hud-world" class="hud-value">1-1</span>
+        </div>
+        <div class="hud-block">
+          <span class="hud-label">Time</span>
+          <span id="hud-time" class="hud-value">300</span>
+        </div>
+        <div class="hud-block">
+          <span class="hud-label">Lives</span>
+          <span id="hud-lives" class="hud-value">×3</span>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="960" height="540" role="img" aria-label="Game canvas"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <p class="overlay-kicker">Fan-made · Free · No install</p>
+            <h2 id="overlay-title">SUPER PIXEL MARIO</h2>
+            <p id="overlay-sub" class="overlay-sub">Loading…</p>
+            <button type="button" id="btn-primary" class="btn-primary">Start Game</button>
+            <ul class="controls-list">
+              <li><kbd>←</kbd><kbd>→</kbd> or <kbd>A</kbd><kbd>D</kbd> Move</li>
+              <li><kbd>Space</kbd> / <kbd>W</kbd> / <kbd>↑</kbd> Jump</li>
+              <li><kbd>P</kbd> Pause · <kbd>M</kbd> Mute · <kbd>Enter</kbd> Start</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="touch-controls" aria-label="Touch controls">
+        <div class="touch-cluster">
+          <button type="button" class="touch-btn" data-touch="left" aria-label="Move left">◀</button>
+          <button type="button" class="touch-btn" data-touch="right" aria-label="Move right">▶</button>
+        </div>
+        <button type="button" class="touch-btn touch-jump" data-touch="jump" aria-label="Jump">A</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Built 100% remote via GitHub + Vercel MCP · Fixed-timestep physics · Pooled particles · Camera culling</p>
+    </footer>
+  </div>
+  <script src="game.js" defer></script>
+</body>
+</html>
