@@ -1,0 +1,9 @@
+{
+  "name": "super-pixel-mario",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Optimized 2D Mario-style canvas platformer",
+  "scripts": {
+    "start": "npx --yes serve -l 3000 ."
+  }
+}
